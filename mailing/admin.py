@@ -7,4 +7,6 @@ from mailing.models import Client
 class ClientAdmin(admin.ModelAdmin):
     """Зарегистрировала модель клиента"""
     list_display = ('email', 'first_name', 'last_name', 'comment')
+    search_fields = ('email', 'first_name', 'last_name')
+    list_filter = ('email',)
 

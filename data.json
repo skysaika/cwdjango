@@ -1,0 +1,32 @@
+[
+  {
+    "model": "mailing.client",
+    "pk": 1,
+    "fields": {
+      "email": "test@mail.com",
+      "first_name": "Test",
+      "last_name": "Testov",
+      "comment": "# test"
+    }
+  },
+  {
+    "model": "mailing.client",
+    "pk": 2,
+    "fields": {
+      "email": "testik@mail.com",
+      "first_name": "Testina",
+      "last_name": "Testova",
+      "comment": "#2"
+    }
+  },
+  {
+    "model": "mailing.client",
+    "pk": 3,
+    "fields": {
+      "email": "maslov@mail.com",
+      "first_name": "Oleg",
+      "last_name": "Maslov",
+      "comment": null
+    }
+  }
+]
