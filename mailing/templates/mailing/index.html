@@ -42,4 +42,13 @@
   </tbody>
 </table>
 
+    # для 3 случайных статей из будущего блога
+{#    def get(self, request, *args, **kwargs):#}
+{#        """Метод GET для главной страницы"""#}
+{#        context = {}#}
+{#        available_products = Vlog.objects.filter(available=True)#}
+{#        # random_posts = random.sample(list(available_posts), min(3, len(available_posts)))#}
+{#        random_posts = Vlog.objects.filter(available=True).order_by('?')[:3]#}
+{#        context['title'] = 'Главная страница'#}
+
 {% endblock %}

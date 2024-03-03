@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView, ListView, UpdateView
+from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView
 
 import mailing
 from mailing.forms import ClientForm
@@ -58,12 +58,15 @@ class ClientDetailView(TemplateView):
         'title': 'Просмотр клиента'
     }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
 
-
-
+class ClientDeleteView(DeleteView):
+    """Удаление клиента"""
+    model = Client
+    template_name = 'mailing/client_confirm_delete.html'
+    extra_context = {
+        'title': 'Удаление клиента'
+    }
+    success_url = reverse_lazy('mailing:client_list')
 
 
 def contact(request):
