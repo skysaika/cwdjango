@@ -24,7 +24,7 @@ class ClientCreateView(CreateView):
     extra_context = {
         'title': 'Создание клиента'
     }
-    success_url = reverse_lazy('mailing:index')
+    success_url = reverse_lazy('mailing:client_list')
 
 
 class ClientListView(ListView):
@@ -34,6 +34,8 @@ class ClientListView(ListView):
     extra_context = {
         'title': 'Список клиентов'
     }
+
+
 
 
 class ClientDetailView(TemplateView):
