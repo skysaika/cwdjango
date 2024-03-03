@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView
 
+import mailing
+from mailing.forms import ClientForm
 from mailing.models import MailingList, Client
 
 
@@ -16,11 +19,12 @@ class IndexView(TemplateView):
 class ClientCreateView(CreateView):
     """Создание клиента"""
     model = Client
+    form_class = ClientForm  # форма для создания клиента
     template_name = 'mailing/client_form.html'
-    fields = ['email', 'first_name', 'last_name', 'comment']
     extra_context = {
         'title': 'Создание клиента'
     }
+    success_url = reverse_lazy('mailing:index')
 
 
 class ClientListView(ListView):
