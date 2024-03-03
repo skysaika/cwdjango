@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+from mailing.models import MailingList
+
 
 class IndexView(TemplateView):
     """Представление главной страницы."""
     template_name = 'mailing/index.html'
+    extra_context = {
+        'title': 'Главная страница',
+        'object_list': MailingList.objects.all()
+    }
 
 
 def contact(request):
